@@ -12,6 +12,8 @@ nav.classList.add('header-scrolled');
 
 
 
+
+
 let navLinks = document.querySelectorAll('.nav-link'); // returns a NodeList of all nav links
 let navCollapse = document.querySelector('.navbar-collapse'); 
 
