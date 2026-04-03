@@ -22,3 +22,24 @@ navLinks.forEach(function(link) {
         navCollapse.classList.remove("show");
     });
 });
+
+
+
+const scrollContainer = document.getElementById('productScroll');
+const card = scrollContainer.querySelector('.col-lg-3'); // first card
+
+// Get computed style to include margins
+const cardStyle = window.getComputedStyle(card);
+const cardMarginRight = parseInt(cardStyle.marginRight);
+const cardMarginLeft = parseInt(cardStyle.marginLeft);
+
+// Exact card width including margins
+const cardWidth = card.offsetWidth + cardMarginLeft + cardMarginRight;
+
+document.getElementById('scrollLeft').addEventListener('click', () => {
+  scrollContainer.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+});
+
+document.getElementById('scrollRight').addEventListener('click', () => {
+  scrollContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+});
