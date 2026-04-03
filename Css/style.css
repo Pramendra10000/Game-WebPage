@@ -20,11 +20,10 @@
    margin: 0;
    padding: 0;
 }
-
 :root {
    /* Background Color */
-   --primary-color: #00ff37;
-   --secondary-color: rgba(0, 255, 55, 0.05);
+   --primary-color: #ff6f00; /* Neon Orange */
+   --secondary-color: rgba(255, 111, 0, 0.1); /* Soft glow background */
    --bg-dark-light: rgba(255, 255, 255, 0.05);
    --bg-white: #fff;
    --bg-black: #000;
@@ -34,11 +33,20 @@
    /* Text Style */
    --primary-font: "Roboto", sans-serif;
    --secondary-font: "Josefin Sans", sans-serif;
-   --primary-text: #00ff37;
+   --primary-text: #ff6f00; /* Neon Orange text */
    --text-white: #fff;
    --text-black: #000;
    --text-light: #ddd;
 }
+
+.neon-text {
+   color: var(--primary-text);
+   text-shadow: 0 0 5px #ff6f00,
+                0 0 10px #ff6f00,
+                0 0 20px #ff6f00,
+                0 0 40px #ff6f00;
+}
+
 
 /* General */
 html,
@@ -80,9 +88,11 @@ a {
 
 .main-btn:hover {
    background: var(--bg-white);
-   box-shadow: 0 0.3571rem 1.0714rem var(--secondary-color);
+   /* box-shadow: 0 0.3571rem 1.0714rem var(--secondary-color); */  /* Green color*/
+    box-shadow: 0 0.3571rem 1.0714rem rgba(255, 111, 0, 0.6); /* glowing orange */
    transform: scale(1.05);
 }
+
 
 h1 {
    font-size: 4rem;
@@ -90,10 +100,13 @@ h1 {
    font-weight: 700;
    font-family: var(--secondary-font);
    background: linear-gradient(45deg, var(--bg-white), var(--primary-color));
-   -webkit-background-clip: text;
+   background-clip: text;              /* Standard property */
+   -webkit-background-clip: text;      /* Vendor prefix for WebKit browsers */
    -webkit-text-fill-color: transparent;
-   text-shadow: 0 0 1.4286rem rgba(0, 255, 55, 0.3);
+      /* text-shadow: 0 0 1.4286rem rgba(0, 255, 55, 0.3); */    /* Green color*/
+   text-shadow: 0 0 1.4286rem rgba(255, 111, 0, 0.6); /* Neon orange glow */
 }
+
 
 h2 {
    font-size: 2.8755rem;
@@ -197,6 +210,13 @@ p {
 
 
 /* Nevigation */
+
+.logo {
+  width: 148px;
+  height: 39px;
+  object-fit: contain;
+}
+
 
 .header_wrapper .navbar {
    padding: 0.9375rem 0;
@@ -381,7 +401,8 @@ p {
    font-weight: 800;
    color: var(--primary-color);
    margin-bottom: 0.7143rem;
-   text-shadow: 0 0 0.7143rem rgba(0, 255, 55, 0.5);
+   /* text-shadow: 0 0 0.7143rem rgba(0, 255, 55, 0.5); */   /* Green color*/
+   text-shadow: 0 0 0.7143rem rgba(255, 111, 0, 0.7); /* neon orange glow */
 }
 
 
@@ -415,7 +436,8 @@ p {
 .facts_wrapper .common-card:hover {
    transform: translateY(-0.7143rem);
    border-color: var(--primary-color);
-   box-shadow: 0 0.7143rem 2.1429rem rgba(0, 255, 55, 0.1);
+   /* box-shadow: 0 0.7143rem 2.1429rem rgba(0, 255, 55, 0.1); */  /* Green color*/
+    box-shadow: 0 0.7143rem 2.1429rem rgba(255, 111, 0, 0.3); /* orange glow */
 }
 
 .facts_wrapper .fact-icon {
@@ -423,6 +445,7 @@ p {
    color: var(--primary-color);
    margin-bottom: 1.5rem;
    position: relative;
+    text-shadow: 0 0 10px #ff6f00; /* glowing icon */
 }
 
 .facts_wrapper h3 {
